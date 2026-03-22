@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Verification</title>
+</head>
+<body>
+
+  <h1>Password Verification</h1>
+
+  <label>Password:</label><br>
+  <input type="password" id="pw1"><br><br>
+
+  <label>Confirm Password:</label><br>
+  <input type="password" id="pw2"><br><br>
+
+  <button onclick="checkPassword()">Submit</button>
+
+  <p id="message"></p>
+
+  <script>
+    function checkPassword() {
+      var pw1 = document.getElementById("pw1").value;
+      var pw2 = document.getElementById("pw2").value;
+      var msg = document.getElementById("message");
+
+      if (pw1.length < 8) {
+        msg.style.color = "red";
+        msg.textContent = "Password must be at least 8 characters long.";
+      } else if (pw1 !== pw2) {
+        msg.style.color = "red";
+        msg.textContent = "Passwords do not match.";
+      } else {
+        msg.style.color = "green";
+        msg.textContent = "Passwords match!";
+      }
+    }
+  </script>
+
+</body>
+</html>

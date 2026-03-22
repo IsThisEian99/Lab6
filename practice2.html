@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Font Control</title>
+</head>
+<body>
+
+  <h1>CSS Font Control</h1>
+
+  <p id="myParagraph" style="border: 3px solid black; padding: 10px;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+  </p>
+
+  <h2>Text Color (RGB)</h2>
+  R: <input type="number" id="tr" min="0" max="255" value="0">
+  G: <input type="number" id="tg" min="0" max="255" value="0">
+  B: <input type="number" id="tb" min="0" max="255" value="0">
+
+  <h2>Border Color (RGB)</h2>
+  R: <input type="number" id="br" min="0" max="255" value="0">
+  G: <input type="number" id="bg" min="0" max="255" value="0">
+  B: <input type="number" id="bb" min="0" max="255" value="0">
+
+  <h2>Border Width (px)</h2>
+  <input type="number" id="bw" min="1" max="20" value="3">
+
+  <br><br>
+  <button onclick="applyStyles()">Apply</button>
+
+  <script>
+    function applyStyles() {
+      var p = document.getElementById("myParagraph");
+
+      var tr = document.getElementById("tr").value;
+      var tg = document.getElementById("tg").value;
+      var tb = document.getElementById("tb").value;
+
+      var br = document.getElementById("br").value;
+      var bg = document.getElementById("bg").value;
+      var bb = document.getElementById("bb").value;
+
+      var bw = document.getElementById("bw").value;
+
+      p.style.color = "rgb(" + tr + "," + tg + "," + tb + ")";
+      p.style.borderColor = "rgb(" + br + "," + bg + "," + bb + ")";
+      p.style.borderWidth = bw + "px";
+    }
+  </script>
+
+</body>
+</html>
